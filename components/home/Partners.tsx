@@ -1,25 +1,21 @@
 import Container from '@/components/ui/Container'
 
-const partners = [
-  { name: 'Company 1', url: '#' },
-  { name: 'Company 2', url: '#' },
-  { name: 'Company 3', url: '#' },
-]
-
 export default function Partners() {
   return (
-    <section className='py-16 bg-[var(--muted)]'>
+    <section className='py-20'>
       <Container>
-        <div className='flex flex-wrap justify-center gap-8'>
-          {partners.map((partner) => (
-            <a
-              key={partner.name}
-              href={partner.url}
-              target='_blank'
-              className='text-gray-400 hover:text-black transition'
+        <p className='text-center text-sm text-[var(--accent)] mb-8'>
+          Trusted by partners and organizations
+        </p>
+
+        <div className='flex justify-center gap-12 flex-wrap opacity-70'>
+          {['Partner 1', 'Partner 2', 'Partner 3'].map((p) => (
+            <div
+              key={p}
+              className='text-lg hover:opacity-100 transition cursor-pointer'
             >
-              {partner.name}
-            </a>
+              {p}
+            </div>
           ))}
         </div>
       </Container>
