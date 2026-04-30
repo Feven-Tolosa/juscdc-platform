@@ -1,13 +1,35 @@
 import { supabase } from './supabaseClient'
+import { AuthError, User } from '@supabase/supabase-js'
 
-export const signUp = async (email: string, password: string) => {
-  return await supabase.auth.signUp({ email, password })
+interface AuthResponse {
+  user: User | null
+  error: AuthError | null
 }
 
-export const signIn = async (email: string, password: string) => {
-  return await supabase.auth.signInWithPassword({ email, password })
+export const signUp = async (
+  email: string,
+  password: string,
+): Promise<AuthResponse> => {
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+  })
+
+  return { user: data.user, error }
 }
 
-export const signOut = async () => {
-  return await supabase.auth.signOut()
+export const signIn = async (
+  email: string,
+  password: string,
+): Promise<AuthResponse> => {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  })
+
+  return { user: data.user, error }
+}
+
+export const signOut = async (): Promise<void> => {
+  await supabase.auth.signOut()
 }
