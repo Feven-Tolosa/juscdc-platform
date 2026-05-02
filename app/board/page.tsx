@@ -1,16 +1,15 @@
-import MemberCard from '@/components/board/MemberCard'
+import BoardTabs from '@/components/board/BoardTabs'
 
 export default function BoardPage() {
   return (
-    <div className='py-20 px-6 max-w-7xl mx-auto'>
-      <h1 className='text-3xl font-bold text-[#1e3a8a] mb-10'>
-        Executive Board
-      </h1>
+    <div className='min-h-screen bg-gradient-to-b from-slate-900 to-black text-white py-20 px-6'>
+      <div className='max-w-7xl mx-auto'>
+        <h1 className='text-4xl font-bold text-center mb-16'>
+          Executive Board
+        </h1>
 
-      <div className='grid md:grid-cols-3 gap-6'>
-        <MemberCard name='President Name' role='President' />
-        <MemberCard name='VP Name' role='Vice President' />
-        <MemberCard name='Secretary' role='General Secretary' />
+        {/* ✅ ONLY CLIENT COMPONENT HERE */}
+        <BoardTabs />
       </div>
     </div>
   )
