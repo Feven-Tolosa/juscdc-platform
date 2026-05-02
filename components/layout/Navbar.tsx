@@ -4,10 +4,12 @@ import Link from 'next/link'
 
 export default function Navbar() {
   return (
-    <nav className='sticky top-0 z-50 bg-white/80 backdrop-blur border-b'>
-      <div className='max-w-7xl mx-auto px-6 py-4 flex justify-between items-center'>
-        <h1 className='font-bold text-lg text-[#1e3a8a]'>JUSCDC</h1>
-
+    <nav className='fixed w-full z-50 backdrop-blur-xl bg-white/10 border-b border-white/20'>
+      <div className='max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white'>
+        <Link href='/'>
+          {' '}
+          <h1>JUSCDC</h1>
+        </Link>
         <div className='flex gap-6 text-sm'>
           <Link href='/'>Home</Link>
           <Link href='/board'>Board</Link>
