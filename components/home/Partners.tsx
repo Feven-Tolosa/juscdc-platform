@@ -9,7 +9,7 @@ export default function Partners() {
         Our Partners
       </h2>
 
-      <div className='flex gap-10 overflow-x-auto'>
+      <div className='flex justify-center gap-10 overflow-x-auto'>
         {[1, 2, 3, 4].map((p) => (
           <motion.div
             key={p}
