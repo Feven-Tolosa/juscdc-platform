@@ -1,15 +1,25 @@
-import Hero from '@/components/home/Hero'
+import AboutSection from '@/components/home/About'
+import CTA from '@/components/home/CAT'
 import ExecutiveSection from '@/components/home/Executive'
-import About from '@/components/home/About'
+import Hero from '@/components/home/Hero'
 import Partners from '@/components/home/Partners'
+import ProgramsPreview from '@/components/home/Programs'
+import Stats from '@/components/home/Status'
+import Testimonials from '@/components/home/Testimonials'
+import WhyJoin from '@/components/home/WhyJoin'
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
+      <Stats />
       <ExecutiveSection />
-      <About />
+      <AboutSection />
+      <ProgramsPreview />
+      <WhyJoin />
+      <Testimonials />
       <Partners />
-    </main>
+      <CTA />
+    </>
   )
 }
