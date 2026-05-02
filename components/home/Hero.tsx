@@ -1,42 +1,17 @@
-'use client'
-
-import Container from '@/components/ui/Container'
-import Button from '@/components/ui/Button'
-
 export default function Hero() {
   return (
-    <section className='relative py-28 overflow-hidden'>
-      {/* Background gradient */}
-      <div className='absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-yellow-50 -z-10' />
+    <section className='text-center py-28 px-6 bg-gradient-to-br from-[#1e3a8a] to-slate-900 text-white'>
+      <h1 className='text-4xl md:text-6xl font-bold max-w-3xl mx-auto'>
+        Bridging the Gap Between Education and Industry
+      </h1>
+      <p className='mt-6 text-lg text-gray-200'>
+        Empowering Jimma University students with real-world skills and
+        opportunities.
+      </p>
 
-      <Container>
-        <div className='text-center max-w-4xl mx-auto space-y-8'>
-          <p className='text-sm tracking-wide text-[var(--accent)] uppercase'>
-            Jimma University Career Club
-          </p>
-
-          <h1 className='text-5xl md:text-7xl font-bold leading-tight'>
-            Bridging the Gap Between{' '}
-            <span className='gradient-text'>Education & Industry</span>
-          </h1>
-
-          <p className='text-lg text-[var(--accent)] max-w-2xl mx-auto'>
-            Empowering students with real-world skills, mentorship, and career
-            opportunities that shape the future.
-          </p>
-
-          <div className='flex justify-center gap-4'>
-            <Button className='shadow-lg'>Get Started</Button>
-
-            <Button
-              variant='secondary'
-              className='border border-[var(--border)]'
-            >
-              View Programs
-            </Button>
-          </div>
-        </div>
-      </Container>
+      <button className='mt-8 bg-[#eab308] text-black px-6 py-3 rounded-lg font-semibold hover:scale-105 transition'>
+        Join Now
+      </button>
     </section>
   )
 }
