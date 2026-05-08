@@ -1,26 +1,30 @@
 'use client'
-import { motion } from 'framer-motion'
-
-const stats = [
-  { number: '500+', label: 'Active Members' },
-  { number: '20+', label: 'Programs Hosted' },
-  { number: '10+', label: 'Industry Partners' },
-]
+import { Users, Briefcase, GraduationCap } from 'lucide-react'
 
 export default function Stats() {
   return (
     <section className='py-20 px-6 bg-white'>
       <div className='max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center'>
-        {stats.map((s, i) => (
-          <motion.div
-            key={i}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 30 }}
-          >
-            <h2 className='text-4xl font-bold text-[#1e3a8a]'>{s.number}</h2>
-            <p className='text-gray-500 mt-2'>{s.label}</p>
-          </motion.div>
-        ))}
+        {/* Stats */}
+        <div className='mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3'>
+          <div className='rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md'>
+            <Users className='mb-3 h-8 w-8 text-yellow-400' />
+            <h3 className='text-3xl font-bold'>500+</h3>
+            <p className='mt-1 text-sm text-slate-300'>Active Members</p>
+          </div>
+
+          <div className='rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md'>
+            <Briefcase className='mb-3 h-8 w-8 text-yellow-400' />
+            <h3 className='text-3xl font-bold'>20+</h3>
+            <p className='mt-1 text-sm text-slate-300'>Career Programs</p>
+          </div>
+
+          <div className='rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md'>
+            <GraduationCap className='mb-3 h-8 w-8 text-yellow-400' />
+            <h3 className='text-3xl font-bold'>4</h3>
+            <p className='mt-1 text-sm text-slate-300'>Campuses Connected</p>
+          </div>
+        </div>
       </div>
     </section>
   )
