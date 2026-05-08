@@ -17,7 +17,7 @@ export default function HeroSection() {
       {/* Grid Overlay */}
       <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:40px_40px]' />
 
-      <div className='relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 py-24 lg:flex-row lg:px-12'>
+      <div className='relative mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center px-6 pb-24 pt-7 lg:flex-row lg:px-12'>
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
