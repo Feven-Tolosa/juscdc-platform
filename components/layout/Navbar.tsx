@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +21,7 @@ export default function Navbar() {
       <div className='max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white'>
         {/* Logo */}
         <Link href='/'>
-          <h1 className='text-xl font-bold'>JUSCDC</h1>
+          <Image src='/logo.jpg' alt='logo' width={40} height={40} />
         </Link>
 
         {/* Desktop Navigation */}
