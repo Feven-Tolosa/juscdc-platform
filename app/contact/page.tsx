@@ -1,18 +1,39 @@
+import ContactHero from '@/components/contact/ContactHero'
+
+import ContactForm from '@/components/contact/ContactForm'
+import ContactInfo from '@/components/contact/ContactInfo'
+import SocialLinks from '@/components/contact/SocialLinks'
+import FAQSection from '@/components/contact/FAQSection'
+import MapSection from '@/components/contact/MapSection'
+
 export default function ContactPage() {
   return (
-    <div className='py-20 px-6 max-w-xl mx-auto'>
-      <h1 className='text-3xl font-bold mb-6'>Contact Us</h1>
+    <main className='min-h-screen bg-[#f8fafc]'>
+      <ContactHero />
 
-      <form className='flex flex-col gap-4'>
-        <input placeholder='Name' className='border p-3 rounded' />
-        <input placeholder='Email' className='border p-3 rounded' />
-        <input placeholder='Subject' className='border p-3 rounded' />
-        <textarea placeholder='Message' className='border p-3 rounded' />
+      <section className='mx-auto max-w-7xl px-6 py-24 lg:px-12'>
+        <div className='grid gap-10 lg:grid-cols-2'>
+          {/* Form */}
+          <ContactForm />
 
-        <button className='bg-[#1e3a8a] text-white py-3 rounded'>
-          Send Message
-        </button>
-      </form>
-    </div>
+          {/* Info */}
+          <div className='space-y-10'>
+            <ContactInfo />
+
+            <SocialLinks />
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div className='mt-20'>
+          <FAQSection />
+        </div>
+
+        {/* Map */}
+        <div className='mt-20'>
+          <MapSection />
+        </div>
+      </section>
+    </main>
   )
 }
