@@ -1,15 +1,50 @@
+import DashboardSidebar from '@/components/dashboard/DashboardSidebar'
+import DashboardHeader from '@/components/dashboard/DashboardHeader'
+
+import ProfileCard from '@/components/dashboard/ProfileCard'
+import DigitalIDCard from '@/components/dashboard/DigitalIDCard'
+
+import RegisteredPrograms from '@/components/dashboard/RegisteredPrograms'
+
+import CertificateVault from '@/components/dashboard/CertificateVault'
+
+import NotificationsPanel from '@/components/dashboard/NotificationsPanel'
+
+import {
+  user,
+  programs,
+  certificates,
+  notifications,
+} from '@/components/dashboard/data'
+
 export default function DashboardPage() {
   return (
-    <div className='py-20 px-6 max-w-4xl mx-auto'>
-      <h1 className='text-3xl font-bold mb-6'>Member Dashboard</h1>
+    <main className='flex min-h-screen bg-[#f8fafc] pt-24'>
+      <DashboardSidebar />
 
-      <div className='bg-white p-6 rounded-xl shadow'>
-        <p>Your Digital ID will appear here</p>
+      <div className='flex-1'>
+        <DashboardHeader />
 
-        <button className='mt-4 bg-[#eab308] px-4 py-2 rounded'>
-          Download ID
-        </button>
+        <div className='space-y-10 p-6 lg:p-10'>
+          {/* Top */}
+          <div className='grid gap-10 xl:grid-cols-3'>
+            <ProfileCard user={user} />
+
+            <div className='xl:col-span-2'>
+              <DigitalIDCard user={user} />
+            </div>
+          </div>
+
+          {/* Programs */}
+          <RegisteredPrograms programs={programs} />
+
+          {/* Certificates */}
+          <CertificateVault certificates={certificates} />
+
+          {/* Notifications */}
+          <NotificationsPanel notifications={notifications} />
+        </div>
       </div>
-    </div>
+    </main>
   )
 }

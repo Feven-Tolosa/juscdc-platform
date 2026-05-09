@@ -35,7 +35,6 @@ export default function Navbar() {
   const links = [
     { name: 'Board', href: '/board' },
     { name: 'Programs', href: '/programs' },
-    { name: 'News', href: '/news' },
     { name: 'Media', href: '/media' },
     { name: 'Dashboard', href: '/dashboard' },
     { name: 'Contact', href: '/contact' },
