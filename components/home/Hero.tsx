@@ -7,7 +7,7 @@ import { ArrowRight, GraduationCap } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <section className='relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#112662] to-[#0f172a] text-white'>
+    <section className='relative pt-20 overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#112662] to-[#0f172a] text-white'>
       {/* Background Glow */}
       <div className='absolute inset-0 opacity-30'>
         <div className='absolute left-[-100px] top-[-100px] h-[300px] w-[300px] rounded-full bg-yellow-400 blur-3xl' />
