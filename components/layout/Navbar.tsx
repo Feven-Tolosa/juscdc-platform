@@ -36,6 +36,7 @@ export default function Navbar() {
     { name: 'Board', href: '/board' },
     { name: 'Programs', href: '/programs' },
     { name: 'News', href: '/news' },
+    { name: 'Media', href: '/media' },
     { name: 'Dashboard', href: '/dashboard' },
     { name: 'Contact', href: '/contact' },
   ]
