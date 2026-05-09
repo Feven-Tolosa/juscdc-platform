@@ -1,69 +1,138 @@
 'use client'
 
+import { registerProgram } from '@/app/api/actions/register-program'
+import { useState } from 'react'
+import toast from 'react-hot-toast'
+
 interface RegistrationFormProps {
+  programId: string
+  programTitle: string
   onClose: () => void
 }
 
-export default function RegistrationForm({ onClose }: RegistrationFormProps) {
+export default function RegistrationForm({
+  programId,
+  programTitle,
+  onClose,
+}: RegistrationFormProps) {
+  const [loading, setLoading] = useState(false)
+
+  const [formData, setFormData] = useState({
+    full_name: '',
+    student_id: '',
+    email: '',
+    campus: '',
+    department: '',
+  })
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    setLoading(true)
+
+    const response = await registerProgram({
+      ...formData,
+      program_id: programId,
+      program_title: programTitle,
+    })
+
+    setLoading(false)
+
+    if (response.success) {
+      toast.success(response.message)
+
+      onClose()
+
+      return
+    }
+
+    toast.error(response.message)
+  }
+
   return (
-    <div className='mt-8 rounded-[30px] bg-slate-50 p-6'>
-      <h3 className='text-2xl font-bold text-slate-900'>
-        Program Registration
-      </h3>
+    <div>
+      <h2 className='text-3xl font-bold text-slate-900'>
+        Register for {programTitle}
+      </h2>
 
-      <form className='mt-6 space-y-5'>
-        <div>
-          <label className='mb-2 block text-sm font-medium text-slate-700'>
-            Full Name
-          </label>
+      <form onSubmit={handleSubmit} className='mt-8 space-y-5'>
+        <input
+          type='text'
+          required
+          placeholder='Full Name'
+          value={formData.full_name}
+          onChange={(event) =>
+            setFormData({
+              ...formData,
+              full_name: event.target.value,
+            })
+          }
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+        />
 
-          <input
-            type='text'
-            placeholder='Enter your full name'
-            className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition focus:border-[#1e3a8a]'
-          />
-        </div>
+        <input
+          type='text'
+          required
+          placeholder='Student ID'
+          value={formData.student_id}
+          onChange={(event) =>
+            setFormData({
+              ...formData,
+              student_id: event.target.value,
+            })
+          }
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+        />
 
-        <div>
-          <label className='mb-2 block text-sm font-medium text-slate-700'>
-            Student ID
-          </label>
+        <input
+          type='email'
+          required
+          placeholder='Email Address'
+          value={formData.email}
+          onChange={(event) =>
+            setFormData({
+              ...formData,
+              email: event.target.value,
+            })
+          }
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+        />
 
-          <input
-            type='text'
-            placeholder='JU12345'
-            className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition focus:border-[#1e3a8a]'
-          />
-        </div>
+        <input
+          type='text'
+          required
+          placeholder='Campus'
+          value={formData.campus}
+          onChange={(event) =>
+            setFormData({
+              ...formData,
+              campus: event.target.value,
+            })
+          }
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+        />
 
-        <div>
-          <label className='mb-2 block text-sm font-medium text-slate-700'>
-            Email Address
-          </label>
+        <input
+          type='text'
+          required
+          placeholder='Department'
+          value={formData.department}
+          onChange={(event) =>
+            setFormData({
+              ...formData,
+              department: event.target.value,
+            })
+          }
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+        />
 
-          <input
-            type='email'
-            placeholder='example@gmail.com'
-            className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition focus:border-[#1e3a8a]'
-          />
-        </div>
-
-        <div className='flex gap-4 pt-4'>
-          <button
-            type='submit'
-            className='flex-1 rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
-          >
-            Register Now
-          </button>
-
-          <button
-            type='button'
-            onClick={onClose}
-            className='rounded-2xl border border-slate-200 px-5 py-4 font-semibold text-slate-700 transition hover:bg-slate-100'
-          >
-            Cancel
-          </button>
-        </div>
+        <button
+          type='submit'
+          disabled={loading}
+          className='w-full rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554] disabled:opacity-50'
+        >
+          {loading ? 'Registering...' : 'Complete Registration'}
+        </button>
       </form>
     </div>
   )

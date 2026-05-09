@@ -2,10 +2,11 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Calendar, MapPin, Users, ArrowRight } from 'lucide-react'
+import { Calendar, MapPin, Users } from 'lucide-react'
 
 import { Program } from './types'
 import RegistrationForm from './RegistrationForm'
+import RegisterButton from './RegisterButton'
 
 interface ProgramCardProps {
   program: Program
@@ -74,19 +75,11 @@ export default function ProgramCard({ program }: ProgramCardProps) {
 
         {/* Buttons */}
         <div className='mt-10 flex gap-4'>
-          <button
-            onClick={() => setShowForm(!showForm)}
-            className='group/button flex-1 rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
-          >
-            <span className='flex items-center justify-center gap-2'>
-              Internal Registration
-              <ArrowRight className='h-5 w-5 transition-transform group-hover/button:translate-x-1' />
-            </span>
-          </button>
+          <RegisterButton programId={program.id} programTitle={program.title} />
         </div>
 
         {/* Registration Form */}
-        {showForm && <RegistrationForm onClose={() => setShowForm(false)} />}
+        {/* {showForm && <RegistrationForm onClose={() => setShowForm(false)} />} */}
       </div>
     </div>
   )
