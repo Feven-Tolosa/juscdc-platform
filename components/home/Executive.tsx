@@ -73,7 +73,7 @@ export default function ExecutiveWelcomeSection() {
               className='group relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-8 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl'
             >
               {/* Gradient Overlay */}
-              <div className='absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/5 to-yellow-400/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+              <div className='absolute inset-0 bg-gradient-to-br from-[#112662]/5 to-yellow-400/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
 
               <div className='relative flex flex-col gap-8 md:flex-row'>
                 {/* Image */}
@@ -90,7 +90,7 @@ export default function ExecutiveWelcomeSection() {
                 {/* Content */}
                 <div className='flex flex-1 flex-col justify-center'>
                   {/* Role Badge */}
-                  <div className='mb-4 inline-flex w-fit rounded-full bg-[#1e3a8a]/10 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>
+                  <div className='mb-4 inline-flex w-fit rounded-full bg-[#112662]/10 px-4 py-2 text-sm font-semibold text-[#112662]'>
                     {executive.role}
                   </div>
 
@@ -113,7 +113,7 @@ export default function ExecutiveWelcomeSection() {
                     <Link
                       href={executive.linkedin}
                       target='_blank'
-                      className='group/social rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-[#1e3a8a] hover:bg-[#1e3a8a] hover:text-white'
+                      className='group/social rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-[#112662] hover:bg-[#112662] hover:text-white'
                     >
                       {/* <Linkedin className='h-5 w-5' /> */}
                     </Link>

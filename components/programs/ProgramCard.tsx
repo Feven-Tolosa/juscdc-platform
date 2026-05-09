@@ -35,7 +35,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
 
       {/* Content */}
       <div className='p-8'>
-        <div className='mb-4 inline-flex rounded-full bg-[#1e3a8a]/10 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>
+        <div className='mb-4 inline-flex rounded-full bg-[#112662]/10 px-4 py-2 text-sm font-semibold text-[#112662]'>
           {program.category}
         </div>
 
@@ -46,17 +46,17 @@ export default function ProgramCard({ program }: ProgramCardProps) {
         {/* Meta */}
         <div className='mt-8 space-y-4'>
           <div className='flex items-center gap-3 text-slate-600'>
-            <Calendar className='h-5 w-5 text-[#1e3a8a]' />
+            <Calendar className='h-5 w-5 text-[#112662]' />
             {program.date}
           </div>
 
           <div className='flex items-center gap-3 text-slate-600'>
-            <MapPin className='h-5 w-5 text-[#1e3a8a]' />
+            <MapPin className='h-5 w-5 text-[#112662]' />
             {program.location}
           </div>
 
           <div className='flex items-center gap-3 text-slate-600'>
-            <Users className='h-5 w-5 text-[#1e3a8a]' />
+            <Users className='h-5 w-5 text-[#112662]' />
             {program.attendees} Students
           </div>
         </div>

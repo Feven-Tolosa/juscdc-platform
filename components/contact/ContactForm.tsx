@@ -39,7 +39,7 @@ export default function ContactForm() {
           required
           type='text'
           placeholder='Full Name'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -47,7 +47,7 @@ export default function ContactForm() {
           required
           type='email'
           placeholder='Email Address'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -55,7 +55,7 @@ export default function ContactForm() {
           required
           type='text'
           placeholder='Subject'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <textarea
@@ -63,13 +63,13 @@ export default function ContactForm() {
           required
           rows={6}
           placeholder='Your message...'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <button
           type='submit'
           disabled={loading}
-          className='w-full rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554] disabled:opacity-50'
+          className='w-full rounded-2xl bg-[#112662] px-5 py-4 font-semibold text-white transition hover:bg-[#172554] disabled:opacity-50'
         >
           {loading ? 'Sending...' : 'Send Message'}
         </button>

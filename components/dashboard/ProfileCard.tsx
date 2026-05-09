@@ -23,7 +23,7 @@ export default function ProfileCard({ user }: ProfileCardProps) {
           {user.fullName}
         </h2>
 
-        <p className='mt-2 text-[#1e3a8a]'>{user.department}</p>
+        <p className='mt-2 text-[#112662]'>{user.department}</p>
 
         <div className='mt-8 w-full space-y-4'>
           <div className='rounded-2xl bg-slate-50 p-4'>

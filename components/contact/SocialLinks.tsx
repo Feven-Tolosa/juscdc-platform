@@ -16,7 +16,7 @@ export default function SocialLinks() {
               key={social.name}
               href={social.url}
               target='_blank'
-              className='flex items-center gap-3 rounded-2xl bg-slate-100 px-5 py-4 font-medium text-slate-700 transition hover:bg-[#1e3a8a] hover:text-white'
+              className='flex items-center gap-3 rounded-2xl bg-slate-100 px-5 py-4 font-medium text-slate-700 transition hover:bg-[#112662] hover:text-white'
             >
               <Icon className='h-5 w-5' />
 

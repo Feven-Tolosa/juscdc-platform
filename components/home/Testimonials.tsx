@@ -44,13 +44,13 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className='mx-auto mb-20 max-w-3xl text-center'
         >
-          <div className='mb-4 inline-flex items-center rounded-full bg-[#1e3a8a]/10 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>
+          <div className='mb-4 inline-flex items-center rounded-full bg-[#112662]/10 px-4 py-2 text-sm font-semibold text-[#112662]'>
             Student Testimonials
           </div>
 
           <h2 className='text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl'>
             What Students Say About{' '}
-            <span className='bg-gradient-to-r from-[#1e3a8a] to-yellow-500 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-[#112662] to-yellow-500 bg-clip-text text-transparent'>
               JUSCDC
             </span>
           </h2>
@@ -76,10 +76,10 @@ export default function TestimonialsSection() {
               className='group relative overflow-hidden rounded-[32px] border border-slate-200 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl'
             >
               {/* Hover Glow */}
-              <div className='absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/0 via-[#1e3a8a]/0 to-yellow-400/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+              <div className='absolute inset-0 bg-gradient-to-br from-[#112662]/0 via-[#112662]/0 to-yellow-400/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
 
               {/* Quote Icon */}
-              <div className='mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1e3a8a]/10 text-[#1e3a8a]'>
+              <div className='mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#112662]/10 text-[#112662]'>
                 <Quote className='h-7 w-7' />
               </div>
 
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='mt-24 overflow-hidden rounded-[40px] bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] p-10 text-center text-white shadow-2xl'
+          className='mt-24 overflow-hidden rounded-[40px] bg-gradient-to-r from-[#0f172a] via-[#112662] to-[#0f172a] p-10 text-center text-white shadow-2xl'
         >
           <h3 className='text-3xl font-extrabold md:text-5xl'>
             Empowering Students Beyond the Classroom

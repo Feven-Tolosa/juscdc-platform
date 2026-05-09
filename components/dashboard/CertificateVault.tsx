@@ -32,7 +32,7 @@ export default function CertificateVault({
             <a
               href={certificate.fileUrl}
               download
-              className='flex items-center justify-center gap-3 rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
+              className='flex items-center justify-center gap-3 rounded-2xl bg-[#112662] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
             >
               <Download className='h-5 w-5' />
               Download

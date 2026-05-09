@@ -35,7 +35,7 @@ export default function DashboardSidebar() {
   return (
     <aside className=' hidden w-[280px] border-r border-slate-200 bg-white lg:block'>
       <div className='flex h-24 items-center border-b border-slate-200 px-8'>
-        <h2 className='text-2xl font-extrabold text-[#1e3a8a]'>JUSCDC</h2>
+        <h2 className='text-2xl font-extrabold text-[#112662]'>JUSCDC</h2>
       </div>
 
       <div className='space-y-3 p-6'>

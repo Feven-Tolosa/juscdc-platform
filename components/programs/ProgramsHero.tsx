@@ -1,6 +1,6 @@
 export default function ProgramsHero() {
   return (
-    <section className='relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] px-6 py-32 text-white'>
+    <section className='relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#112662] to-[#0f172a] px-6 py-32 text-white'>
       <div className='absolute left-0 top-0 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl' />
       <div className='absolute bottom-0 right-0 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl' />
 

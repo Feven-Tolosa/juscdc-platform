@@ -26,7 +26,7 @@ export default function RegisteredPrograms({
                 <p className='mt-1 text-slate-500'>{program.date}</p>
               </div>
 
-              <span className='rounded-full bg-[#1e3a8a]/10 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>
+              <span className='rounded-full bg-[#112662]/10 px-4 py-2 text-sm font-semibold text-[#112662]'>
                 {program.status}
               </span>
             </div>

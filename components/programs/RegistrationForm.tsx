@@ -67,7 +67,7 @@ export default function RegistrationForm({
               full_name: event.target.value,
             })
           }
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -81,7 +81,7 @@ export default function RegistrationForm({
               student_id: event.target.value,
             })
           }
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -95,7 +95,7 @@ export default function RegistrationForm({
               email: event.target.value,
             })
           }
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -109,7 +109,7 @@ export default function RegistrationForm({
               campus: event.target.value,
             })
           }
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -123,13 +123,13 @@ export default function RegistrationForm({
               department: event.target.value,
             })
           }
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <button
           type='submit'
           disabled={loading}
-          className='w-full rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554] disabled:opacity-50'
+          className='w-full rounded-2xl bg-[#112662] px-5 py-4 font-semibold text-white transition hover:bg-[#172554] disabled:opacity-50'
         >
           {loading ? 'Registering...' : 'Complete Registration'}
         </button>

@@ -34,7 +34,7 @@ export default function MemberModal({ member, onClose }: MemberModalProps) {
         <div className='p-8'>
           <h2 className='text-4xl font-bold text-slate-900'>{member.name}</h2>
 
-          <p className='mt-2 text-[#1e3a8a]'>{member.role}</p>
+          <p className='mt-2 text-[#112662]'>{member.role}</p>
 
           <p className='mt-6 leading-8 text-slate-600'>{member.bio}</p>
         </div>

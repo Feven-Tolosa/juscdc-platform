@@ -101,7 +101,7 @@ export default function BoardTabs() {
             onClick={() => setActiveTab(tab)}
             className={`px-5 py-2 rounded-full transition ${
               activeTab === tab
-                ? 'bg-[#1e3a8a] text-white'
+                ? 'bg-[#112662] text-white'
                 : 'bg-gray-200 text-black'
             }`}
           >

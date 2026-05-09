@@ -57,13 +57,13 @@ export default function ProgramsSection() {
           viewport={{ once: true }}
           className='mx-auto mb-16 max-w-3xl text-center'
         >
-          <div className='mb-4 inline-flex items-center rounded-full bg-[#1e3a8a]/10 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>
+          <div className='mb-4 inline-flex items-center rounded-full bg-[#112662]/10 px-4 py-2 text-sm font-semibold text-[#112662]'>
             Programs & Trainings
           </div>
 
           <h2 className='text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl'>
             Explore Our{' '}
-            <span className='bg-gradient-to-r from-[#1e3a8a] to-yellow-500 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-[#112662] to-yellow-500 bg-clip-text text-transparent'>
               Career Programs
             </span>
           </h2>
@@ -124,7 +124,7 @@ export default function ProgramsSection() {
                   </div>
 
                   {/* Title */}
-                  <h3 className='text-2xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-[#1e3a8a]'>
+                  <h3 className='text-2xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-[#112662]'>
                     {program.title}
                   </h3>
 
@@ -137,7 +137,7 @@ export default function ProgramsSection() {
                   <div className='mt-8 flex items-center gap-4'>
                     <Link
                       href={program.href}
-                      className='group/btn inline-flex items-center gap-2 rounded-2xl bg-[#1e3a8a] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#172554]'
+                      className='group/btn inline-flex items-center gap-2 rounded-2xl bg-[#112662] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#172554]'
                     >
                       Learn More
                       <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1' />
@@ -162,7 +162,7 @@ export default function ProgramsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='mt-20 rounded-[36px] bg-gradient-to-r from-[#0f172a] via-[#1e3a8a] to-[#0f172a] p-10 text-center text-white shadow-2xl'
+          className='mt-20 rounded-[36px] bg-gradient-to-r from-[#0f172a] via-[#112662] to-[#0f172a] p-10 text-center text-white shadow-2xl'
         >
           <h3 className='text-3xl font-bold md:text-4xl'>
             Ready to Build Your Future?

@@ -17,7 +17,7 @@ export default function CampusTabs({
           onClick={() => onChange(campus)}
           className={`rounded-2xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
             activeCampus === campus
-              ? 'bg-[#1e3a8a] text-white shadow-lg'
+              ? 'bg-[#112662] text-white shadow-lg'
               : 'bg-white text-slate-700 hover:bg-slate-100'
           }`}
         >

@@ -12,7 +12,7 @@ export default function ContactInfo() {
             className='rounded-[30px] bg-white p-6 shadow-xl'
           >
             <div className='flex items-start gap-5'>
-              <div className='rounded-2xl bg-[#1e3a8a]/10 p-4 text-[#1e3a8a]'>
+              <div className='rounded-2xl bg-[#112662]/10 p-4 text-[#112662]'>
                 <Icon className='h-6 w-6' />
               </div>
 

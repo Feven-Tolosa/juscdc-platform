@@ -20,7 +20,7 @@ export default function RegisterButton({
     <>
       <button
         onClick={() => setOpen(true)}
-        className='w-full rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
+        className='w-full rounded-2xl bg-[#112662] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
       >
         Internal Registration
       </button>

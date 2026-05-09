@@ -136,7 +136,7 @@ export default function WhyJoinSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='relative mt-24 overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-r from-[#1e3a8a] via-[#2563eb] to-[#1e3a8a] p-10 text-center shadow-2xl'
+          className='relative mt-24 overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-r from-[#112662] via-[#2563eb] to-[#112662] p-10 text-center shadow-2xl'
         >
           {/* Glow */}
           <div className='absolute left-0 top-0 h-72 w-72 rounded-full bg-yellow-400/20 blur-3xl' />

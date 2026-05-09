@@ -8,7 +8,7 @@ interface DigitalIDCardProps {
 
 export default function DigitalIDCard({ user }: DigitalIDCardProps) {
   return (
-    <div className='overflow-hidden rounded-[36px] bg-gradient-to-br from-[#1e3a8a] to-[#0f172a] p-8 text-white shadow-2xl'>
+    <div className='overflow-hidden rounded-[36px] bg-gradient-to-br from-[#112662] to-[#0f172a] p-8 text-white shadow-2xl'>
       <div className='flex items-start justify-between'>
         <div>
           <p className='text-sm text-slate-300'>Jimma University</p>
@@ -39,7 +39,7 @@ export default function DigitalIDCard({ user }: DigitalIDCardProps) {
         </div>
       </div>
 
-      <button className='mt-10 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 font-semibold text-[#1e3a8a] transition hover:bg-slate-100'>
+      <button className='mt-10 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 font-semibold text-[#112662] transition hover:bg-slate-100'>
         <Download className='h-5 w-5' />
         Download ID
       </button>

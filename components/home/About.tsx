@@ -45,7 +45,7 @@ export default function AboutHistorySection() {
             viewport={{ once: true }}
           >
             {/* Badge */}
-            <div className='mb-5 inline-flex items-center gap-2 rounded-full bg-[#1e3a8a]/10 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>
+            <div className='mb-5 inline-flex items-center gap-2 rounded-full bg-[#112662]/10 px-4 py-2 text-sm font-semibold text-[#112662]'>
               <CalendarDays className='h-4 w-4' />
               Established in 2024
             </div>
@@ -53,7 +53,7 @@ export default function AboutHistorySection() {
             {/* Heading */}
             <h2 className='text-4xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl'>
               About{' '}
-              <span className='bg-gradient-to-r from-[#1e3a8a] to-yellow-500 bg-clip-text text-transparent'>
+              <span className='bg-gradient-to-r from-[#112662] to-yellow-500 bg-clip-text text-transparent'>
                 JUSCDC
               </span>
             </h2>
@@ -78,7 +78,7 @@ export default function AboutHistorySection() {
             <div className='mt-10 grid gap-5 sm:grid-cols-2'>
               {/* Mission */}
               <div className='rounded-3xl border border-slate-200 bg-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'>
-                <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1e3a8a]/10 text-[#1e3a8a]'>
+                <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#112662]/10 text-[#112662]'>
                   <Target className='h-7 w-7' />
                 </div>
 
@@ -117,7 +117,7 @@ export default function AboutHistorySection() {
             className='relative'
           >
             {/* Main Card */}
-            <div className='relative overflow-hidden rounded-[36px] border border-slate-200 bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#0f172a] p-10 text-white shadow-2xl'>
+            <div className='relative overflow-hidden rounded-[36px] border border-slate-200 bg-gradient-to-br from-[#0f172a] via-[#112662] to-[#0f172a] p-10 text-white shadow-2xl'>
               {/* Decorative Glow */}
               <div className='absolute -right-10 -top-10 h-40 w-40 rounded-full bg-yellow-400/20 blur-3xl' />
               <div className='absolute bottom-0 left-0 h-40 w-40 rounded-full bg-blue-400/20 blur-3xl' />
@@ -208,7 +208,7 @@ export default function AboutHistorySection() {
                     viewport={{ once: true }}
                     className='rounded-3xl border border-slate-200 bg-white p-6 shadow-lg'
                   >
-                    <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1e3a8a]/10 text-[#1e3a8a]'>
+                    <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#112662]/10 text-[#112662]'>
                       <Icon className='h-7 w-7' />
                     </div>
 

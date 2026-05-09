@@ -7,7 +7,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #1e3a8a;
+  --primary: #112662;
   --secondary: #eab308;
   --accent: #64748b;
 }
@@ -53,7 +53,7 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(90deg, #1e3a8a, #eab308);
+  background: linear-gradient(90deg, #112662, #eab308);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
