@@ -1,48 +1,44 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { Member } from './data'
+import Image from 'next/image'
+import { X } from 'lucide-react'
+import { Member } from './types'
 
-export default function MemberModal({
-  member,
-  onClose,
-}: {
+interface MemberModalProps {
   member: Member | null
   onClose: () => void
-}) {
+}
+
+export default function MemberModal({ member, onClose }: MemberModalProps) {
+  if (!member) return null
+
   return (
-    <AnimatePresence>
-      {member && (
-        <motion.div
-          className='fixed inset-0 bg-black/60 flex items-center justify-center z-50'
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+    <div className='fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6 backdrop-blur-md'>
+      <div className='relative w-full max-w-2xl overflow-hidden rounded-[36px] bg-white shadow-2xl'>
+        <button
           onClick={onClose}
+          className='absolute right-5 top-5 z-20 rounded-full bg-black/10 p-3'
         >
-          <motion.div
-            onClick={(e) => e.stopPropagation()}
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8 }}
-            className='bg-white text-black rounded-2xl p-8 max-w-md w-full'
-          >
-            <div className='w-24 h-24 bg-gray-300 rounded-full mx-auto mb-4' />
+          <X className='h-5 w-5' />
+        </button>
 
-            <h2 className='text-xl font-bold text-center'>{member.name}</h2>
-            <p className='text-center text-gray-500'>{member.role}</p>
+        <div className='relative h-96'>
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className='object-cover'
+          />
+        </div>
 
-            <p className='mt-4 text-center text-gray-700'>{member.bio}</p>
+        <div className='p-8'>
+          <h2 className='text-4xl font-bold text-slate-900'>{member.name}</h2>
 
-            <button
-              onClick={onClose}
-              className='mt-6 w-full bg-[#1e3a8a] text-white py-2 rounded'
-            >
-              Close
-            </button>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
+          <p className='mt-2 text-[#1e3a8a]'>{member.role}</p>
+
+          <p className='mt-6 leading-8 text-slate-600'>{member.bio}</p>
+        </div>
+      </div>
+    </div>
   )
 }
