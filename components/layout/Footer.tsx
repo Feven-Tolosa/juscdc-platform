@@ -75,7 +75,7 @@ export default function Footer() {
                 target='_blank'
                 className='rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0A66C2] hover:text-white'
               >
-                {/* <Linkedin className='h-5 w-5' /> */}
+                <Send className='h-5 w-5' />
               </Link>
 
               <Link

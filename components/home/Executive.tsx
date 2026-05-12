@@ -115,7 +115,7 @@ export default function ExecutiveWelcomeSection() {
                       target='_blank'
                       className='group/social rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-[#112662] hover:bg-[#112662] hover:text-white'
                     >
-                      {/* <Linkedin className='h-5 w-5' /> */}
+                      <Send className='h-5 w-5' />
                     </Link>
 
                     <Link

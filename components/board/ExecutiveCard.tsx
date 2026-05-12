@@ -40,7 +40,7 @@ export default function ExecutiveCard({ member, onOpen }: ExecutiveCardProps) {
               target='_blank'
               className='rounded-2xl bg-slate-100 p-4 transition hover:bg-[#0A66C2] hover:text-white'
             >
-              {/* <Linkedin className='h-5 w-5' /> */}
+              <Send className='h-5 w-5' />
             </Link>
           )}
 
