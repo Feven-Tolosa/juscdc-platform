@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import MemberCard from './MemberCard'
 import MemberModal from './MemberModal'
 import { motion, AnimatePresence } from 'framer-motion'
-import { supabase } from '@/lib/supabaseClient'
+import { supabase } from '@/lib/supabase/supabaseClient'
 
 type Member = {
   id: string
