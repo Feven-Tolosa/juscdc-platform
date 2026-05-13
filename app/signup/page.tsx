@@ -1,54 +1,67 @@
-'use client'
-
-import { useState, FormEvent } from 'react'
-import { signUp } from '@/lib/auth'
+import { signup } from '@/actions/auth'
 
 export default function SignupPage() {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-  const [message, setMessage] = useState<string>('')
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    const { error } = await signUp(email, password)
-
-    if (error) {
-      setMessage(error.message)
-    } else {
-      setMessage('Account created. Check your email.')
-    }
-  }
-
   return (
-    <div className='max-w-md mx-auto mt-10'>
-      <h1 className='text-2xl font-bold mb-4'>Signup</h1>
+    <main className='flex min-h-screen items-center justify-center bg-[#f8fafc] px-6 py-32'>
+      <div className='w-full max-w-xl rounded-[40px] bg-white p-10 shadow-2xl'>
+        <h1 className='text-4xl font-extrabold text-slate-900'>
+          Create Account
+        </h1>
 
-      <form onSubmit={handleSubmit} className='space-y-4'>
-        <input
-          type='email'
-          placeholder='Email'
-          className='w-full p-2 border rounded'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        <p className='mt-3 text-slate-500'>
+          Join the JUSCDC membership platform.
+        </p>
 
-        <input
-          type='password'
-          placeholder='Password'
-          className='w-full p-2 border rounded'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <form action={signup} className='mt-10 space-y-5'>
+          <input
+            name='fullName'
+            required
+            placeholder='Full Name'
+            className='w-full rounded-2xl border text-slate-500 focus:text-slate-800 border-slate-300 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          />
 
-        <button className='w-full bg-blue-600 text-white p-2 rounded'>
-          Sign Up
-        </button>
-      </form>
+          <input
+            name='studentId'
+            required
+            placeholder='Student ID'
+            className='w-full rounded-2xl text-slate-500 focus:text-slate-800  border border-slate-300 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          />
 
-      {message && <p className='mt-4 text-sm'>{message}</p>}
-    </div>
+          <input
+            name='campus'
+            required
+            placeholder='Campus'
+            className='w-full rounded-2xl text-slate-500  border border-slate-300 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          />
+
+          <input
+            name='department'
+            required
+            placeholder='Department'
+            className='w-full rounded-2xl text-slate-500  border border-slate-300 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          />
+
+          <input
+            name='email'
+            type='email'
+            required
+            placeholder='Email'
+            className='w-full rounded-2xl text-slate-500  border border-slate-300 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          />
+
+          <input
+            name='password'
+            type='password'
+            required
+            placeholder='Password'
+            className='w-full rounded-2xl text-slate-500  border border-slate-300 px-5 py-4 outline-none focus:border-[#1e3a8a]'
+          />
+
+          <button className='w-full rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'>
+            Create Account
+          </button>
+        </form>
+      </div>
+    </main>
   )
 }

@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 
 import { createClient } from '@/lib/supabase/server'
 
-export async function signup(formData: FormData) {
+export async function signup(formData: FormData): Promise<void> {
   const supabase = await createClient()
 
   const email = formData.get('email') as string
@@ -25,13 +25,11 @@ export async function signup(formData: FormData) {
   })
 
   if (error) {
-    return {
-      error: error.message,
-    }
+    throw new Error(error.message)
   }
 
   if (data.user) {
-    await supabase.from('profiles').insert({
+    const { error: profileError } = await supabase.from('profiles').insert({
       id: data.user.id,
       full_name: fullName,
       student_id: studentId,
@@ -39,12 +37,16 @@ export async function signup(formData: FormData) {
       campus,
       department,
     })
+
+    if (profileError) {
+      throw new Error(profileError.message)
+    }
   }
 
   redirect('/dashboard')
 }
 
-export async function login(formData: FormData) {
+export async function login(formData: FormData): Promise<void> {
   const supabase = await createClient()
 
   const email = formData.get('email') as string
@@ -57,15 +59,13 @@ export async function login(formData: FormData) {
   })
 
   if (error) {
-    return {
-      error: error.message,
-    }
+    throw new Error(error.message)
   }
 
   redirect('/dashboard')
 }
 
-export async function logout() {
+export async function logout(): Promise<void> {
   const supabase = await createClient()
 
   await supabase.auth.signOut()
