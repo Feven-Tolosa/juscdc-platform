@@ -1,22 +1,16 @@
 'use server'
 
 import { redirect } from 'next/navigation'
-
 import { createClient } from '@/lib/supabase/server'
 
-export async function signup(formData: FormData): Promise<void> {
+export async function signup(formData: FormData) {
   const supabase = await createClient()
 
   const email = formData.get('email') as string
-
   const password = formData.get('password') as string
-
   const fullName = formData.get('fullName') as string
-
   const studentId = formData.get('studentId') as string
-
   const campus = formData.get('campus') as string
-
   const department = formData.get('department') as string
 
   const { data, error } = await supabase.auth.signUp({
@@ -28,29 +22,30 @@ export async function signup(formData: FormData): Promise<void> {
     throw new Error(error.message)
   }
 
-  if (data.user) {
-    const { error: profileError } = await supabase.from('profiles').insert({
-      id: data.user.id,
-      full_name: fullName,
-      student_id: studentId,
-      email,
-      campus,
-      department,
-    })
+  if (!data.user) {
+    throw new Error('User creation failed')
+  }
 
-    if (profileError) {
-      throw new Error(profileError.message)
-    }
+  const { error: profileError } = await supabase.from('profiles').upsert({
+    id: data.user.id,
+    full_name: fullName,
+    student_id: studentId,
+    email,
+    campus,
+    department,
+  })
+
+  if (profileError) {
+    throw new Error(profileError.message)
   }
 
   redirect('/dashboard')
 }
 
-export async function login(formData: FormData): Promise<void> {
+export async function login(formData: FormData) {
   const supabase = await createClient()
 
   const email = formData.get('email') as string
-
   const password = formData.get('password') as string
 
   const { error } = await supabase.auth.signInWithPassword({
@@ -65,7 +60,7 @@ export async function login(formData: FormData): Promise<void> {
   redirect('/dashboard')
 }
 
-export async function logout(): Promise<void> {
+export async function logout() {
   const supabase = await createClient()
 
   await supabase.auth.signOut()

@@ -136,7 +136,7 @@ export default function Navbar() {
                 ))}
 
                 <Link
-                  href='/membership'
+                  href='/signup'
                   className='mt-4 flex items-center justify-center gap-2 rounded-xl bg-yellow-400 px-5 py-4 font-semibold text-slate-900'
                 >
                   Join Now
