@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
+import { NavbarUser } from '@/components/navbar/types'
 import { createClient } from '@/lib/supabase/client'
-
-interface NavbarUser {
-  id: string
-  fullName: string
-  avatarUrl: string | null
-}
 
 export function useAuthUser() {
   const [user, setUser] = useState<NavbarUser | null>(null)
@@ -18,9 +13,7 @@ export function useAuthUser() {
   useEffect(() => {
     const supabase = createClient()
 
-    async function loadUser() {
-      setLoading(true)
-
+    async function getUser() {
       const {
         data: { user: authUser },
       } = await supabase.auth.getUser()
@@ -33,13 +26,7 @@ export function useAuthUser() {
 
       const { data: profile } = await supabase
         .from('profiles')
-        .select(
-          `
-            id,
-            full_name,
-            avatar_url
-          `,
-        )
+        .select('*')
         .eq('id', authUser.id)
         .single()
 
@@ -58,18 +45,12 @@ export function useAuthUser() {
       setLoading(false)
     }
 
-    loadUser()
+    getUser()
 
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange(async (_event, session) => {
-      if (!session?.user) {
-        setUser(null)
-        setLoading(false)
-        return
-      }
-
-      await loadUser()
+    } = supabase.auth.onAuthStateChange(() => {
+      getUser()
     })
 
     return () => {
