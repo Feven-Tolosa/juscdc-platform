@@ -3,13 +3,15 @@ import { Member } from './types'
 
 interface MemberCardProps {
   member: Member
-  key: string
-  onClick: () => void
+  onClick?: () => void
 }
 
-export default function MemberCard({ member }: MemberCardProps) {
+export default function MemberCard({ member, onClick }: MemberCardProps) {
   return (
-    <div className='group overflow-hidden rounded-[30px] bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl'>
+    <div
+      onClick={onClick}
+      className='group cursor-pointer overflow-hidden rounded-[30px] bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl'
+    >
       <div className='relative h-80 overflow-hidden'>
         <Image
           src={member.image}

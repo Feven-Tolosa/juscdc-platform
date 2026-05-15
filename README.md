@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JUSCDC Website
 
-## Getting Started
+A modern multi-campus career development platform built for Jimma University Students Career Development Club (JUSCDC).
 
-First, run the development server:
+## 🚀 Live Demo
+
+[Live Website](https://f-vs-portflio-zpwp.vercel.app/?utm_source=chatgpt.com)
+
+---
+
+## ✨ Features
+
+- Modern responsive landing page
+- Authentication with Supabase
+- Member dashboard
+- Digital membership ID
+- Programs & registration system
+- Certificate vault
+- Board & leadership pages
+- Media archive
+- Notification system
+- Dynamic navbar with auth state
+- Mobile-first UI design
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Supabase
+- Lucide Icons
+
+---
+
+## 📂 Project Structure
+
+```bash
+app/
+components/
+hooks/
+actions/
+lib/
+public/
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Feven-Tolosa/juscdc-website.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔑 Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file:
 
-## Learn More
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 
-To learn more about Next.js, take a look at the following resources:
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔐 Authentication
 
-## Deploy on Vercel
+Authentication is powered by Supabase Auth.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Features include:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Signup
+- Login
+- Logout
+- Session handling
+- Protected dashboard routes
+
+---
+
+## 📱 Responsive Design
+
+The platform is fully responsive and optimized for:
+
+- Mobile
+- Tablet
+- Desktop
+
+---
+
+## 👩‍💻 Developer
+
+Built by [Feven Tolosa GitHub](https://github.com/Feven-Tolosa?utm_source=chatgpt.com)
+
+Portfolio:
+
+[Portfolio Website](https://f-vs-portflio-zpwp.vercel.app/?utm_source=chatgpt.com)
+
+---
+
+## 📄 License
+
+This project is for educational and organizational use.
