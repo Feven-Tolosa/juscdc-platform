@@ -3,6 +3,8 @@ import { Member } from './types'
 
 interface MemberCardProps {
   member: Member
+  key: string
+  onClick: () => void
 }
 
 export default function MemberCard({ member }: MemberCardProps) {
