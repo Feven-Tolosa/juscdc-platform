@@ -1,69 +1,60 @@
 'use client'
 
-import { useState } from 'react'
+import Link from 'next/link'
+
+import { useActionState } from 'react'
+
 import { signup } from '@/actions/auth'
 
+import SignupButton from '@/components/auth/SignupButton'
+
 export default function SignupPage() {
-  const [loading, setLoading] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-
-  async function handleSignup(formData: FormData) {
-    if (loading) return
-
-    setLoading(true)
-    setErrorMessage('')
-
-    try {
-      await signup(formData)
-    } catch (error) {
-      console.error(error)
-
-      setErrorMessage(
-        error instanceof Error ? error.message : 'Something went wrong',
-      )
-    } finally {
-      setLoading(false)
-    }
-  }
+  const [state, formAction] = useActionState(signup, {
+    error: null,
+  })
 
   return (
     <main className='flex min-h-screen items-center justify-center bg-[#f8fafc] px-6 py-32'>
       <div className='w-full max-w-xl rounded-[40px] bg-white p-10 shadow-2xl'>
-        <h1 className='text-4xl font-extrabold text-slate-900'>
-          Create Account
-        </h1>
+        {/* Header */}
+        <div className='mb-8'>
+          <h1 className='text-4xl font-extrabold text-slate-900'>
+            Create Account
+          </h1>
 
-        <p className='mt-3 text-slate-500'>
-          Join the JUSCDC membership platform.
-        </p>
+          <p className='mt-3 text-slate-500'>
+            Join the JUSCDC membership platform.
+          </p>
+        </div>
 
-        <form action={handleSignup} className='mt-10 space-y-5'>
+        {/* Form */}
+        <form action={formAction} className='space-y-5'>
           <input
             name='fullName'
             required
             placeholder='Full Name'
-            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-500 outline-none focus:border-[#1e3a8a] focus:text-slate-800'
+            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
           />
 
           <input
             name='studentId'
             required
             placeholder='Student ID'
-            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-500 outline-none focus:border-[#1e3a8a] focus:text-slate-800'
+            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
           />
 
           <input
             name='campus'
             required
             placeholder='Campus'
-            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-500 outline-none focus:border-[#1e3a8a] focus:text-slate-800'
+            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
           />
 
           <input
             name='department'
             required
             placeholder='Department'
-            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-500 outline-none focus:border-[#1e3a8a] focus:text-slate-800'
+            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
           />
 
           <input
@@ -71,7 +62,7 @@ export default function SignupPage() {
             type='email'
             required
             placeholder='Email'
-            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-500 outline-none focus:border-[#1e3a8a] focus:text-slate-800'
+            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
           />
 
           <input
@@ -79,23 +70,32 @@ export default function SignupPage() {
             type='password'
             required
             placeholder='Password'
-            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-500 outline-none focus:border-[#1e3a8a] focus:text-slate-800'
+            className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
           />
 
-          {errorMessage && (
-            <p className='rounded-xl bg-red-50 px-4 py-3 text-sm text-red-600'>
-              {errorMessage}
-            </p>
+          {/* Error */}
+          {state.error && (
+            <div className='rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-500'>
+              {state.error}
+            </div>
           )}
 
-          <button
-            type='submit'
-            disabled={loading}
-            className='w-full rounded-2xl bg-[#1e3a8a] px-5 py-4 font-semibold text-white transition hover:bg-[#172554] disabled:cursor-not-allowed disabled:opacity-50'
-          >
-            {loading ? 'Creating Account...' : 'Create Account'}
-          </button>
+          {/* Submit */}
+          <SignupButton />
         </form>
+
+        {/* Footer */}
+        <div className='mt-8 text-center'>
+          <p className='text-sm text-slate-500'>
+            Already have an account?{' '}
+            <Link
+              href='/login'
+              className='font-semibold text-[#1e3a8a] hover:underline'
+            >
+              Login
+            </Link>
+          </p>
+        </div>
       </div>
     </main>
   )
