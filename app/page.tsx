@@ -4,7 +4,6 @@ import ExecutiveSection from '@/components/home/Executive'
 import Hero from '@/components/home/Hero'
 import Partners from '@/components/home/Partners'
 import ProgramsPreview from '@/components/home/Programs'
-import Stats from '@/components/home/Status'
 import Testimonials from '@/components/home/Testimonials'
 import WhyJoin from '@/components/home/WhyJoin'
 
