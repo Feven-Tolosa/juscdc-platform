@@ -1,5 +1,5 @@
-import { supabase } from './supabase/client'
 import { AuthError, User } from '@supabase/supabase-js'
+import { supabase } from './supabase/supabaseClient'
 
 interface AuthResponse {
   user: User | null
