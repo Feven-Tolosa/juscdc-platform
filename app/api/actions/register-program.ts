@@ -1,6 +1,6 @@
-import { supabase } from '@/lib/supabase/client'
-;('use server')
+'use server'
 
+import { supabase } from '@/lib/supabase/supabaseClient'
 import { ProgramRegistration } from '@/types/registration'
 
 export async function registerProgram(data: ProgramRegistration) {
