@@ -2,7 +2,7 @@ import ProfileForm from '@/components/profile/ProfileForm'
 
 export default function ProfilePage() {
   return (
-    <main className='min-h-screen bg-gradient-to-b from-slate-50 via-blue-50 to-slate-100 px-6 py-24'>
+    <main className='min-h-screen bg-linear-to-b from-slate-50 via-blue-50 to-slate-100 px-6 py-24'>
       <div className='mx-auto max-w-5xl'>
         <div className='mb-12 text-center'>
           <div className='inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-[#1e3a8a]'>

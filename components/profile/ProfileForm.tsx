@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect } from 'react'
 import Image from 'next/image'
-import { SiInstagram, SiLinkedin } from 'react-icons/si'
+import { SiInstagram, SiLinkerd } from 'react-icons/si'
 
 import {
   User,
@@ -162,7 +162,7 @@ export default function ProfileForm() {
           <div className='grid gap-5 md:grid-cols-3'>
             {/* LinkedIn */}
             <div className='relative'>
-              <SiLinkedin
+              <SiLinkerd
                 size={18}
                 className='absolute left-4 top-1/2 -translate-y-1/2 text-slate-400'
               />
