@@ -12,6 +12,7 @@ import {
   Send,
   Camera,
   Save,
+  IdCard,
 } from 'lucide-react'
 
 import { updateProfile } from '@/actions/profile'
@@ -98,12 +99,11 @@ export default function ProfileForm() {
 
               <input
                 name='fullName'
-                defaultValue={user?.fullName}
+                defaultValue={user?.fullName || ''}
                 placeholder='Enter your full name'
                 className='w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-800 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
               />
             </div>
-
             {/* Campus */}
             <div className='space-y-2'>
               <label className='flex items-center gap-2 font-semibold text-slate-700'>
@@ -113,11 +113,23 @@ export default function ProfileForm() {
 
               <input
                 name='campus'
+                defaultValue={user?.campus || ''}
                 placeholder='Your campus'
                 className='w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-800 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
               />
             </div>
+            <div className='space-y-2'>
+              <label className='flex items-center gap-2 font-semibold text-slate-700'>
+                <IdCard size={18} />
+                ID
+              </label>
 
+              <input
+                name='id'
+                placeholder='Your ID'
+                className='w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-800 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
+              />
+            </div>
             {/* Department */}
             <div className='space-y-2 md:col-span-2'>
               <label className='flex items-center gap-2 font-semibold text-slate-700'>
@@ -144,6 +156,7 @@ export default function ProfileForm() {
           <textarea
             name='bio'
             rows={6}
+            defaultValue={user?.bio || ''}
             placeholder='Tell us something about yourself...'
             className='w-full rounded-3xl border border-slate-200 bg-white px-5 py-4 text-slate-800 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
           />
@@ -169,6 +182,7 @@ export default function ProfileForm() {
 
               <input
                 name='linkedinUrl'
+                defaultValue={user?.linkedinUrl || ''}
                 placeholder='LinkedIn URL'
                 className='w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-4 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
               />
@@ -183,6 +197,7 @@ export default function ProfileForm() {
 
               <input
                 name='telegramUrl'
+                defaultValue={user?.telegramUrl || ''}
                 placeholder='Telegram URL'
                 className='w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-4 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
               />
@@ -197,6 +212,7 @@ export default function ProfileForm() {
 
               <input
                 name='instagramUrl'
+                defaultValue={user?.instagramUrl || ''}
                 placeholder='Instagram URL'
                 className='w-full rounded-2xl border border-slate-200 bg-white py-4 pl-12 pr-4 outline-none transition focus:border-[#1e3a8a] focus:ring-4 focus:ring-blue-100'
               />

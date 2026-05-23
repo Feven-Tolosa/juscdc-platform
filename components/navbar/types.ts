@@ -1,5 +1,12 @@
+import { campuses } from '../board/data'
 export interface NavbarUser {
-  id: string
+  id: string | number
   fullName: string
   avatarUrl: string | null
+  campus?: string
+  department?: string
+  bio?: string
+  linkedinUrl?: string
+  telegramUrl?: string
+  instagramUrl?: string
 }
