@@ -1,12 +1,15 @@
 export interface Member {
+  id: string
   name: string
   role: string
-  image: string
   bio?: string
+  image: string
+  campus: string
+  category: string
+  email?: string
   linkedin?: string
   telegram?: string
   instagram?: string
-  email?: string
 }
 
 export interface CampusMembers {
