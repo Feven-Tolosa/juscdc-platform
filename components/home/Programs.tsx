@@ -63,7 +63,7 @@ export default function ProgramsSection() {
 
           <h2 className='text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl'>
             Explore Our{' '}
-            <span className='bg-gradient-to-r from-[#112662] to-yellow-500 bg-clip-text text-transparent'>
+            <span className='bg-linear-to-r from-[#112662] to-yellow-500 bg-clip-text text-transparent'>
               Career Programs
             </span>
           </h2>
@@ -90,7 +90,7 @@ export default function ProgramsSection() {
                   delay: index * 0.15,
                 }}
                 viewport={{ once: true }}
-                className='group overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl'
+                className='group overflow-hidden rounded-32px border border-slate-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl'
               >
                 {/* Image */}
                 <div className='relative h-64 overflow-hidden'>
@@ -102,7 +102,7 @@ export default function ProgramsSection() {
                   />
 
                   {/* Overlay */}
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent' />
+                  <div className='absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent' />
 
                   {/* Status */}
                   <div className='absolute left-5 top-5 rounded-full bg-yellow-400 px-4 py-2 text-xs font-bold text-slate-900 shadow-lg'>
@@ -162,7 +162,7 @@ export default function ProgramsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='mt-20 rounded-[36px] bg-gradient-to-r from-[#0f172a] via-[#112662] to-[#0f172a] p-10 text-center text-white shadow-2xl'
+          className='mt-20 rounded-[36px] bg-linear-to-r from-[#0f172a] via-[#112662] to-[#0f172a] p-10 text-center text-white shadow-2xl'
         >
           <h3 className='text-3xl font-bold md:text-4xl'>
             Ready to Build Your Future?

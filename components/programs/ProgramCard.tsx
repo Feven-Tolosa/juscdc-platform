@@ -20,7 +20,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
       {/* Image */}
       <div className='relative h-72 overflow-hidden'>
         <Image
-          src={program.image}
+          src={program.image || '/placeholder-program.jpg'}
           alt={program.title}
           fill
           className='object-cover transition duration-700 group-hover:scale-110'
@@ -62,7 +62,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
         </div>
 
         {/* Features */}
-        <div className='mt-8 flex flex-wrap gap-3'>
+        {/* <div className='mt-8 flex flex-wrap gap-3'>
           {program.features.map((feature) => (
             <span
               key={feature}
@@ -71,7 +71,7 @@ export default function ProgramCard({ program }: ProgramCardProps) {
               {feature}
             </span>
           ))}
-        </div>
+        </div> */}
 
         {/* Buttons */}
         <div className='mt-10 flex gap-4'>
