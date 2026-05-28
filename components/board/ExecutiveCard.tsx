@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Send, Mail } from 'lucide-react'
 import { Member } from './types'
+import { SiInstagram, SiLinkerd } from 'react-icons/si'
 
 interface ExecutiveCardProps {
   member: Member
@@ -12,7 +13,7 @@ interface ExecutiveCardProps {
 
 export default function ExecutiveCard({ member, onOpen }: ExecutiveCardProps) {
   return (
-    <div className='group justify-between overflow-hidden rounded-[36px] bg-white shadow-xl transition hover:-translate-y-2 hover:shadow-2xl'>
+    <div className='group justify-center overflow-hidden rounded-[36px] bg-white shadow-xl transition hover:-translate-y-2 hover:shadow-2xl'>
       <div className='relative h-96 overflow-hidden'>
         <Image
           src={member.image}
@@ -38,9 +39,9 @@ export default function ExecutiveCard({ member, onOpen }: ExecutiveCardProps) {
             <Link
               href={member.linkedin}
               target='_blank'
-              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-[#0A66C2] hover:text-white'
+              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-[#0A66C2] hover:text-white text-gray-500 border-gray-500 border'
             >
-              <Send className='h-5 w-5' />
+              <SiLinkerd className='h-5 w-5 sm-h-3 sm-w-3 md:h-4 md:w-4' />
             </Link>
           )}
 
@@ -48,7 +49,7 @@ export default function ExecutiveCard({ member, onOpen }: ExecutiveCardProps) {
             <Link
               href={member.telegram}
               target='_blank'
-              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-yellow-400 hover:text-slate-900'
+              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-yellow-400 hover:text-slate-900 text-gray-500 border-gray-500 border'
             >
               <Send className='h-5 w-5' />
             </Link>
@@ -58,16 +59,16 @@ export default function ExecutiveCard({ member, onOpen }: ExecutiveCardProps) {
             <Link
               href={member.instagram}
               target='_blank'
-              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-pink-500 hover:text-white'
+              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-pink-500 hover:text-white text-gray-500 border-gray-500 border'
             >
-              {/* <Instagram className='h-5 w-5' /> */}
+              <SiInstagram className='h-5 w-5' />
             </Link>
           )}
 
           {member.email && (
             <Link
               href={`mailto:${member.email}`}
-              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-blue-500 hover:text-white'
+              className='rounded-2xl bg-slate-100 p-4 transition hover:bg-blue-500 hover:text-white text-gray-500 border-gray-500 border'
             >
               <Mail className='h-5 w-5' />
             </Link>

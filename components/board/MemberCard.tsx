@@ -20,7 +20,7 @@ export default function MemberCard({ member, onClick }: MemberCardProps) {
           className='object-cover transition duration-700 group-hover:scale-110'
         />
 
-        <div className='absolute inset-0 bg-gradient-to-t from-black/70 to-transparent' />
+        <div className='absolute inset-0 bg-linear-to-t from-black/70 to-transparent' />
       </div>
 
       <div className='p-6'>
