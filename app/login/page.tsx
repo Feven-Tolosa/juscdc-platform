@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 
-import { useActionState } from 'react'
+import { useState, useActionState } from 'react'
+
+import { Eye, EyeOff } from 'lucide-react'
 
 import { login } from '@/actions/auth'
 
@@ -12,6 +14,8 @@ export default function LoginPage() {
   const [state, formAction] = useActionState(login, {
     error: null,
   })
+
+  const [showPassword, setShowPassword] = useState(false)
 
   return (
     <main className='flex min-h-screen items-center justify-center bg-[#f8fafc] px-6 py-32'>
@@ -39,14 +43,22 @@ export default function LoginPage() {
           </div>
 
           {/* Password */}
-          <div>
+          <div className='relative'>
             <input
               name='password'
-              type='password'
+              type={showPassword ? 'text' : 'password'}
               required
               placeholder='Password'
-              className='w-full rounded-2xl border border-slate-300 px-5 py-4 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
+              className='w-full rounded-2xl border border-slate-300 px-5 py-4 pr-14 text-slate-700 outline-none transition focus:border-[#1e3a8a]'
             />
+
+            <button
+              type='button'
+              onClick={() => setShowPassword(!showPassword)}
+              className='absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700'
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
           </div>
 
           {/* Error Message */}
