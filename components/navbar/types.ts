@@ -1,4 +1,3 @@
-import { campuses } from '../board/data'
 export interface NavbarUser {
   id: string | number
   fullName: string
