@@ -1,11 +1,9 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import { Calendar, MapPin, Users } from 'lucide-react'
 
 import { Program } from './types'
-import RegistrationForm from './RegistrationForm'
 import RegisterButton from './RegisterButton'
 
 interface ProgramCardProps {
@@ -13,8 +11,6 @@ interface ProgramCardProps {
 }
 
 export default function ProgramCard({ program }: ProgramCardProps) {
-  const [showForm, setShowForm] = useState(false)
-
   return (
     <div className='group overflow-hidden rounded-[36px] bg-white shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl'>
       {/* Image */}

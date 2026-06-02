@@ -5,11 +5,11 @@ export interface Member {
   bio?: string
   image: string
   campus: string
-  category: string
   email?: string
   linkedin?: string
   telegram?: string
   instagram?: string
+  category: string // required
 }
 
 export interface CampusMembers {

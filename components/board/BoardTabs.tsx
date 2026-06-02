@@ -1,21 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+
 import MemberCard from './MemberCard'
 import MemberModal from './MemberModal'
-import { motion, AnimatePresence } from 'framer-motion'
+import { Member } from './types'
 import { supabase } from '@/lib/supabase/supabaseClient'
-
-type Member = {
-  id: string
-  name: string
-  role: string
-  campus: string
-  bio: string
-  image: string
-  linkedin?: string
-  telegram?: string
-}
 
 const tabs = ['Main', 'BECO', 'JiT', 'AGRI']
 
@@ -28,15 +19,17 @@ export default function BoardTabs() {
   async function fetchMembers() {
     const { data, error } = await supabase.from('members').select('*')
 
-    if (!error && data) {
-      setMembers(data)
+    if (error) {
+      console.error(error)
+      return
     }
+
+    setMembers((data ?? []) as Member[])
   }
-  // FETCH MEMBERS
+
   useEffect(() => {
     fetchMembers()
 
-    // REALTIME SUBSCRIPTION
     const channel = supabase
       .channel('members-realtime')
       .on(
@@ -68,11 +61,11 @@ export default function BoardTabs() {
   return (
     <div className='mt-16'>
       {/* HEB */}
-      <h2 className='text-2xl font-semibold mb-6 text-center'>
+      <h2 className='mb-6 text-center text-2xl font-semibold'>
         Higher Executive Board
       </h2>
 
-      <div className='grid md:grid-cols-3 gap-6 mb-16'>
+      <div className='mb-16 grid gap-6 md:grid-cols-3'>
         {heb.map((member) => (
           <MemberCard
             key={member.id}
@@ -83,23 +76,23 @@ export default function BoardTabs() {
       </div>
 
       {/* Search */}
-      <div className='max-w-md mx-auto mb-8'>
+      <div className='mx-auto mb-8 max-w-md'>
         <input
           type='text'
           placeholder='Search members...'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className='w-full p-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 backdrop-blur'
+          className='w-full rounded-xl border border-white/20 bg-white/10 p-3 text-white placeholder-gray-400 backdrop-blur'
         />
       </div>
 
       {/* Tabs */}
-      <div className='flex gap-4 justify-center mb-10 flex-wrap'>
+      <div className='mb-10 flex flex-wrap justify-center gap-4'>
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-5 py-2 rounded-full transition ${
+            className={`rounded-full px-5 py-2 transition ${
               activeTab === tab
                 ? 'bg-[#112662] text-white'
                 : 'bg-gray-200 text-black'
@@ -117,7 +110,7 @@ export default function BoardTabs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          className='grid md:grid-cols-3 gap-6'
+          className='grid gap-6 md:grid-cols-3'
         >
           {filtered.map((member) => (
             <MemberCard
