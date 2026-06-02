@@ -61,25 +61,10 @@ export default function ProgramCard({ program }: ProgramCardProps) {
           </div>
         </div>
 
-        {/* Features */}
-        {/* <div className='mt-8 flex flex-wrap gap-3'>
-          {program.features.map((feature) => (
-            <span
-              key={feature}
-              className='rounded-full bg-slate-100 px-4 py-2 text-sm text-slate-700'
-            >
-              {feature}
-            </span>
-          ))}
-        </div> */}
-
         {/* Buttons */}
         <div className='mt-10 flex gap-4'>
           <RegisterButton programId={program.id} programTitle={program.title} />
         </div>
-
-        {/* Registration Form */}
-        {/* {showForm && <RegistrationForm onClose={() => setShowForm(false)} />} */}
       </div>
     </div>
   )

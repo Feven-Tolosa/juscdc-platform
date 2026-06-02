@@ -12,14 +12,14 @@ import NotificationsPanel from '@/components/dashboard/NotificationsPanel'
 export default async function DashboardPage() {
   const supabase = await createClient()
 
-  // ── Auth guard ──────────────────────────────────────────────
+  // Auth guard
   const {
     data: { user },
   } = await supabase.auth.getUser()
 
   if (!user) redirect('/login')
 
-  // ── Profile ─────────────────────────────────────────────────
+  // Profile
   const { data: profile } = await supabase
     .from('profiles')
     .select('*')
@@ -28,7 +28,7 @@ export default async function DashboardPage() {
 
   if (!profile) redirect('/login')
 
-  // ── Registered programs (join programs table) ────────────────
+  // Registered programs (join programs table)
   const { data: registrations } = await supabase
     .from('registrations')
     .select(
@@ -46,7 +46,7 @@ export default async function DashboardPage() {
     .eq('user_id', user.id)
     .order('registered_at', { ascending: false })
 
-  // ── Certificates ─────────────────────────────────────────────
+  //  Certificates
   const { data: certificates } = await supabase
     .from('certificates')
     .select('*')
@@ -64,7 +64,7 @@ export default async function DashboardPage() {
     }),
   )
 
-  // ── Notifications (personal + broadcasts) ────────────────────
+  //  Notifications (personal + broadcasts)
   const { data: notifications } = await supabase
     .from('notifications')
     .select('*')
@@ -72,10 +72,10 @@ export default async function DashboardPage() {
     .order('created_at', { ascending: false })
     .limit(20)
 
-  // ── Unread count for header bell ─────────────────────────────
+  //  Unread count for header bell
   const unreadCount = (notifications ?? []).filter((n) => !n.is_read).length
 
-  // ── Shape data for components ─────────────────────────────────
+  //  Shape data for components
   const dashboardUser = {
     id: user.id,
     fullName: profile.full_name,
@@ -156,7 +156,7 @@ export default async function DashboardPage() {
   )
 }
 
-// ── Helper ────────────────────────────────────────────────────
+//  Helper
 function formatRelativeTime(isoString: string): string {
   const diff = Date.now() - new Date(isoString).getTime()
   const minutes = Math.floor(diff / 60_000)

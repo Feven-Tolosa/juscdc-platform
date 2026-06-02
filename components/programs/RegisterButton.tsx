@@ -1,7 +1,8 @@
+// components/programs/RegisterButton.tsx
 'use client'
 
 import { useState } from 'react'
-
+import { ArrowRight } from 'lucide-react'
 import RegistrationModal from './RegistrationModal'
 import RegistrationForm from './RegistrationForm'
 
@@ -14,23 +15,24 @@ export default function RegisterButton({
   programId,
   programTitle,
 }: RegisterButtonProps) {
-  const [open, setOpen] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
-        className='w-full rounded-2xl bg-[#112662] px-5 py-4 font-semibold text-white transition hover:bg-[#172554]'
+        onClick={() => setShowModal(true)}
+        className='group/btn inline-flex items-center gap-2 rounded-2xl bg-[#112662] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#172554]'
       >
-        Internal Registration
+        Register Now
+        <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1' />
       </button>
 
-      {open && (
-        <RegistrationModal onClose={() => setOpen(false)}>
+      {showModal && (
+        <RegistrationModal onClose={() => setShowModal(false)}>
           <RegistrationForm
             programId={programId}
             programTitle={programTitle}
-            onClose={() => setOpen(false)}
+            onClose={() => setShowModal(false)}
           />
         </RegistrationModal>
       )}

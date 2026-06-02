@@ -2,46 +2,37 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import {
-  ArrowRight,
-  CalendarDays,
-  Users,
-  Briefcase,
-  GraduationCap,
-} from 'lucide-react'
-
-const programs = [
-  {
-    title: 'Leadership Training',
-    description:
-      'Empowering students with leadership, teamwork, communication, and project management skills.',
-    image: '/programs/leadership.jpg',
-    icon: Users,
-    status: 'Open Registration',
-    href: '/programs/leadership-training',
-  },
-  {
-    title: 'JU-LEAP',
-    description:
-      'A career acceleration initiative connecting students with industry professionals and opportunities.',
-    image: '/programs/ju-leap.jpg',
-    icon: Briefcase,
-    status: 'Upcoming',
-    href: '/programs/ju-leap',
-  },
-  {
-    title: 'Career Readiness Workshop',
-    description:
-      'CV building, interview preparation, networking, and personal branding for future professionals.',
-    image: '/programs/career.jpg',
-    icon: GraduationCap,
-    status: 'Active',
-    href: '/programs/career-readiness',
-  },
-]
+import { ArrowRight, CalendarDays } from 'lucide-react'
+import { supabase } from '@/lib/supabase/supabaseClient'
+import RegistrationModal from '@/components/programs/RegistrationModal'
+import RegistrationForm from '@/components/programs/RegistrationForm'
+import { Program } from '@/components/programs/types'
 
 export default function ProgramsSection() {
+  const [programs, setPrograms] = useState<Program[]>([])
+  const [loading, setLoading] = useState(true)
+  const [activeProgram, setActiveProgram] = useState<{
+    id: string
+    title: string
+  } | null>(null)
+
+  useEffect(() => {
+    async function fetchPrograms() {
+      const { data, error } = await supabase
+        .from('programs')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(3) // only show 3 on the home page
+
+      if (!error) setPrograms(data || [])
+      setLoading(false)
+    }
+
+    fetchPrograms()
+  }, [])
+
   return (
     <section className='relative overflow-hidden bg-[#f8fafc] py-24'>
       {/* Background Glow */}
@@ -75,86 +66,89 @@ export default function ProgramsSection() {
           </p>
         </motion.div>
 
-        {/* Program Cards */}
-        <div className='grid gap-8 lg:grid-cols-3'>
-          {programs.map((program, index) => {
-            const Icon = program.icon
+        {/* Loading */}
+        {loading && (
+          <div className='py-20 text-center text-lg font-medium text-slate-500'>
+            Loading programs...
+          </div>
+        )}
 
-            return (
+        {/* Empty */}
+        {!loading && programs.length === 0 && (
+          <div className='py-20 text-center text-slate-400'>
+            No programs available yet.
+          </div>
+        )}
+
+        {/* Program Cards */}
+        {!loading && programs.length > 0 && (
+          <div className='grid gap-8 lg:grid-cols-3'>
+            {programs.map((program, index) => (
               <motion.div
-                key={program.title}
+                key={program.id}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  delay: index * 0.15,
-                }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className='group overflow-hidden rounded-32px border border-slate-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl'
+                className='group overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl'
               >
                 {/* Image */}
                 <div className='relative h-64 overflow-hidden'>
                   <Image
-                    src={program.image}
+                    src={program.image || '/placeholder-program.jpg'}
                     alt={program.title}
                     fill
                     className='object-cover transition-transform duration-700 group-hover:scale-110'
                   />
 
-                  {/* Overlay */}
                   <div className='absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent' />
 
-                  {/* Status */}
                   <div className='absolute left-5 top-5 rounded-full bg-yellow-400 px-4 py-2 text-xs font-bold text-slate-900 shadow-lg'>
                     {program.status}
-                  </div>
-
-                  {/* Icon */}
-                  <div className='absolute bottom-5 left-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-white backdrop-blur-xl'>
-                    <Icon className='h-7 w-7' />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className='p-8'>
-                  {/* Date */}
                   <div className='mb-4 flex items-center gap-2 text-sm text-slate-500'>
                     <CalendarDays className='h-4 w-4' />
-                    Ongoing Program
+                    {program.date ?? 'Ongoing Program'}
                   </div>
 
-                  {/* Title */}
                   <h3 className='text-2xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-[#112662]'>
                     {program.title}
                   </h3>
 
-                  {/* Description */}
                   <p className='mt-5 leading-8 text-slate-600'>
                     {program.description}
                   </p>
 
-                  {/* Buttons */}
                   <div className='mt-8 flex items-center gap-4'>
                     <Link
-                      href={program.href}
+                      href={`/programs/${program.id}`}
                       className='group/btn inline-flex items-center gap-2 rounded-2xl bg-[#112662] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#172554]'
                     >
                       Learn More
                       <ArrowRight className='h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1' />
                     </Link>
 
-                    <Link
-                      href='/register'
+                    <button
+                      onClick={() =>
+                        setActiveProgram({
+                          id: program.id,
+                          title: program.title,
+                        })
+                      }
                       className='rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-400 hover:text-slate-900'
                     >
                       Register
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </motion.div>
-            )
-          })}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <motion.div
@@ -182,6 +176,17 @@ export default function ProgramsSection() {
           </Link>
         </motion.div>
       </div>
+
+      {/* Registration Modal */}
+      {activeProgram && (
+        <RegistrationModal onClose={() => setActiveProgram(null)}>
+          <RegistrationForm
+            programId={activeProgram.id}
+            programTitle={activeProgram.title}
+            onClose={() => setActiveProgram(null)}
+          />
+        </RegistrationModal>
+      )}
     </section>
   )
 }
