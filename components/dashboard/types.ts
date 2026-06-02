@@ -1,4 +1,5 @@
 export interface DashboardUser {
+  id: string
   fullName: string
   studentId: string
   email: string
@@ -18,12 +19,13 @@ export interface Certificate {
   id: string
   title: string
   issueDate: string
-  fileUrl: string
+  fileUrl: string | null
 }
 
 export interface Notification {
   id: string
   title: string
   message: string
+  isRead: boolean
   createdAt: string
 }
