@@ -76,7 +76,7 @@ export default function NotificationsPanel({
               <div className='flex items-start justify-between gap-5'>
                 <div className='flex items-start gap-3'>
                   {!notification.isRead && (
-                    <span className='mt-1.5 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[#112662]' />
+                    <span className='mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-[#112662]' />
                   )}
                   <div>
                     <h3 className='text-lg font-bold text-slate-900'>

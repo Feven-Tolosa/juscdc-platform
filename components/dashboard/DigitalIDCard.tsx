@@ -104,7 +104,7 @@ export default function DigitalIDCard({ user }: DigitalIDCardProps) {
   }
 
   return (
-    <div className='overflow-hidden rounded-[36px] bg-gradient-to-br from-[#112662] to-[#0f172a] p-8 text-white shadow-2xl'>
+    <div className='overflow-hidden rounded-[36px] bg-linear-to-br from-[#112662] to-[#0f172a] p-8 text-white shadow-2xl'>
       <div className='flex items-start justify-between'>
         <div>
           <p className='text-sm text-slate-300'>Jimma University</p>

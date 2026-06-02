@@ -38,7 +38,7 @@ export default function DashboardSidebar() {
   }
 
   return (
-    <aside className='hidden w-[280px] flex-col border-r border-slate-200 bg-white lg:flex'>
+    <aside className='hidden w-280px flex-col border-r border-slate-200 bg-white lg:flex'>
       {/* Logo */}
       <div className='flex h-24 items-center border-b border-slate-200 px-8'>
         <h2 className='text-2xl font-extrabold text-[#112662]'>JUSCDC</h2>
