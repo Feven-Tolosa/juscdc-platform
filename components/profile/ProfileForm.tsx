@@ -14,7 +14,7 @@ import {
   IdCard,
 } from 'lucide-react'
 
-import { updateProfile } from '@/actions/profile'
+import { updateProfile } from '@/app/api/actions/profile'
 import { useAuthUser } from '@/hooks/use-auth-user'
 import { SlSocialInstagram, SlSocialLinkedin } from 'react-icons/sl'
 

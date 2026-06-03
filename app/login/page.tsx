@@ -6,7 +6,7 @@ import { useState, useActionState } from 'react'
 
 import { Eye, EyeOff } from 'lucide-react'
 
-import { login } from '@/actions/auth'
+import { login } from '@/app/api/actions/auth'
 
 import LoginButton from '@/components/auth/LoginButton'
 
