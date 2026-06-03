@@ -114,9 +114,7 @@ The platform is fully responsive and optimized for:
 
 Built by [Feven Tolosa GitHub](https://github.com/Feven-Tolosa?utm_source=chatgpt.com)
 
-Portfolio:
-
-[Portfolio Website](https://f-vs-portflio-zpwp.vercel.app/?utm_source=chatgpt.com)
+Portfolio: [Portfolio Website](https://f-vs-portflio-zpwp.vercel.app/?utm_source=chatgpt.com)
 
 ---
 
