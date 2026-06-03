@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function CTA() {
   return (
@@ -16,9 +17,12 @@ export default function CTA() {
         Join JUSCDC and unlock your potential today.
       </p>
 
-      <button className='mt-8 bg-[#eab308] text-black px-8 py-3 rounded-xl'>
+      <Link
+        href='/profile'
+        className='mt-8 bg-[#eab308] text-black px-8 py-3 rounded-xl'
+      >
         Become a Member
-      </button>
+      </Link>
     </section>
   )
 }

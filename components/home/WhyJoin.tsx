@@ -154,7 +154,7 @@ export default function WhyJoinSection() {
 
             <div className='mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'>
               <Link
-                href='/membership'
+                href='/profile'
                 className='group inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-7 py-4 font-semibold text-slate-900 transition-all duration-300 hover:scale-105 hover:bg-yellow-300'
               >
                 Join JUSCDC
