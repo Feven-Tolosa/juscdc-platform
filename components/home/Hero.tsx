@@ -57,7 +57,7 @@ export default function HeroSection() {
             </Link>
 
             <Link
-              href='/membership'
+              href='/profile'
               className='inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-7 py-4 font-semibold backdrop-blur-md transition-all duration-300 hover:bg-white/20'
             >
               Join the Club
