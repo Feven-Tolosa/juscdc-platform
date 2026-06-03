@@ -39,7 +39,7 @@ export default function ContactForm() {
           required
           type='text'
           placeholder='Full Name'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
+          className='w-full rounded-2xl border text-gray-900 border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -47,7 +47,7 @@ export default function ContactForm() {
           required
           type='email'
           placeholder='Email Address'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
+          className='w-full rounded-2xl border text-gray-900 border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <input
@@ -55,7 +55,7 @@ export default function ContactForm() {
           required
           type='text'
           placeholder='Subject'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
+          className='w-full rounded-2xl border text-gray-900 border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <textarea
@@ -63,7 +63,7 @@ export default function ContactForm() {
           required
           rows={6}
           placeholder='Your message...'
-          className='w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
+          className='w-full rounded-2xl border text-gray-900 border-slate-200 px-5 py-4 outline-none focus:border-[#112662]'
         />
 
         <button

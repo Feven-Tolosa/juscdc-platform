@@ -7,31 +7,31 @@ export const mediaEvents: MediaEvent[] = [
     description:
       'A large-scale leadership and innovation summit for students across campuses.',
     date: 'May 2026',
-    coverImage: '/media/event-1/cover.jpg',
+    coverImage: '/logo.jpg.jpg',
 
     gallery: [
       {
         id: 1,
-        image: '/media/event-1/1.jpg',
+        image: '/logo.jpg',
       },
       {
         id: 2,
-        image: '/media/event-1/2.jpg',
+        image: '/logo.jpg',
       },
       {
         id: 3,
-        image: '/media/event-1/3.jpg',
+        image: '/logo.jpg',
       },
       {
         id: 4,
-        image: '/media/event-1/4.jpg',
+        image: '/logo.jpg',
       },
     ],
 
     videos: [
       {
         title: 'Event Highlights',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        url: 'https://youtu.be/zoOMeZASj7U?si=IgMoxCg7w5-bnvAs',
         platform: 'youtube',
       },
     ],
@@ -43,27 +43,27 @@ export const mediaEvents: MediaEvent[] = [
     description:
       'Professional development and networking program for university students.',
     date: 'April 2026',
-    coverImage: '/media/event-2/cover.jpg',
+    coverImage: '/logo.jpg',
 
     gallery: [
       {
         id: 1,
-        image: '/media/event-2/1.jpg',
+        image: '/logo.jpg',
       },
       {
         id: 2,
-        image: '/media/event-2/2.jpg',
+        image: '/logo.jpg',
       },
       {
         id: 3,
-        image: '/media/event-2/3.jpg',
+        image: '/logo.jpg',
       },
     ],
 
     videos: [
       {
         title: 'Workshop Recording',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+        url: 'https://youtu.be/zoOMeZASj7U?si=IgMoxCg7w5-bnvAs',
         platform: 'youtube',
       },
     ],
