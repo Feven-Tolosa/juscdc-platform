@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Send, Quote } from 'lucide-react'
-import { SiInstagram, SiLinkerd } from 'react-icons/si'
+import { SlSocialInstagram, SlSocialLinkedin } from 'react-icons/sl'
 
 const executives = [
   {
@@ -118,14 +118,14 @@ export default function ExecutiveWelcomeSection() {
                       target='_blank'
                       className='group/social rounded-2xl border border-slate-700 text-slate-700   bg-slate-50 p-4 transition-all duration-300 hover:border-pink-400 hover:bg-pink-400 hover:text-slate-900'
                     >
-                      <SiInstagram className='h-5 w-5' />
+                      <SlSocialInstagram className='h-5 w-5' />
                     </Link>
                     <Link
                       href={executive.linkedin}
                       target='_blank'
                       className='group/social rounded-2xl border border-slate-700 text-slate-700   bg-slate-50 p-4 transition-all duration-300 hover:border-yellow-400 hover:bg-yellow-400 hover:text-slate-900'
                     >
-                      <SiLinkerd className='h-5 w-5' />
+                      <SlSocialLinkedin className='h-5 w-5' />
                     </Link>
 
                     <Link

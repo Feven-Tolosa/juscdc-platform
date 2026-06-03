@@ -2,7 +2,6 @@
 
 import { useActionState, useEffect } from 'react'
 import Image from 'next/image'
-import { SiInstagram, SiLinkerd } from 'react-icons/si'
 
 import {
   User,
@@ -17,6 +16,7 @@ import {
 
 import { updateProfile } from '@/actions/profile'
 import { useAuthUser } from '@/hooks/use-auth-user'
+import { SlSocialInstagram, SlSocialLinkedin } from 'react-icons/sl'
 
 const initialState = {
   error: null,
@@ -175,7 +175,7 @@ export default function ProfileForm() {
           <div className='grid gap-5 md:grid-cols-3'>
             {/* LinkedIn */}
             <div className='relative'>
-              <SiLinkerd
+              <SlSocialLinkedin
                 size={18}
                 className='absolute left-4 top-1/2 -translate-y-1/2 text-slate-400'
               />
@@ -205,7 +205,7 @@ export default function ProfileForm() {
 
             {/* Instagram */}
             <div className='relative'>
-              <SiInstagram
+              <SlSocialInstagram
                 size={18}
                 className='absolute left-4 top-1/2 -translate-y-1/2 text-slate-400'
               />

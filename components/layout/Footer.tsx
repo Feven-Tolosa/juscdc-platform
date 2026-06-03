@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Send, Mail, ArrowRight, MapPin, Phone } from 'lucide-react'
+import { SlSocialInstagram, SlSocialLinkedin } from 'react-icons/sl'
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -28,7 +29,7 @@ export default function Footer() {
       <div className='absolute bottom-0 right-0 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl' />
 
       {/* Grid Overlay */}
-      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]' />
+      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px]' />
 
       <div className='relative mx-auto max-w-7xl px-6 pb-8 pt-20 lg:px-12'>
         {/* Top Footer */}
@@ -75,7 +76,7 @@ export default function Footer() {
                 target='_blank'
                 className='rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:bg-[#0A66C2] hover:text-white'
               >
-                <Send className='h-5 w-5' />
+                <SlSocialLinkedin className='h-5 w-5' />
               </Link>
 
               <Link
@@ -83,7 +84,7 @@ export default function Footer() {
                 target='_blank'
                 className='rounded-2xl border border-white/10 bg-white/5 p-4 text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:bg-pink-500 hover:text-white'
               >
-                {/* <Instagram className='h-5 w-5' /> */}
+                <SlSocialInstagram className='h-5 w-5' />
               </Link>
 
               <Link
@@ -185,7 +186,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className='my-12 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent' />
+        <div className='my-12 h-px bg-linear-to-r from-transparent via-white/10 to-transparent' />
 
         {/* Bottom Footer */}
         <div className='flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left'>
