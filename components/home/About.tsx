@@ -192,7 +192,7 @@ export default function AboutHistorySection() {
             </div>
 
             {/* Floating Stats */}
-            <div className='mt-8 grid gap-5 sm:grid-cols-3'>
+            <div className='mt-8 grid gap-5 sm:grid-cols-3 '>
               {stats.map((stat, index) => {
                 const Icon = stat.icon
 
@@ -206,7 +206,7 @@ export default function AboutHistorySection() {
                       delay: index * 0.1,
                     }}
                     viewport={{ once: true }}
-                    className='rounded-3xl border border-slate-200 bg-white p-6 shadow-lg'
+                    className='rounded-3xl border border-slate-200 bg-white p-6 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl'
                   >
                     <div className='mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#112662]/10 text-[#112662]'>
                       <Icon className='h-7 w-7' />
