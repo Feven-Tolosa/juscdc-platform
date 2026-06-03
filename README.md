@@ -2,6 +2,10 @@
 
 A modern multi-campus career development platform built for Jimma University Students Career Development Club (JUSCDC).
 
+## 📸 Screenshots
+<img width="950" height="449" alt="image" src="https://github.com/user-attachments/assets/2c6015fb-c5f0-4c91-bcc5-717308d7831d" />
+
+
 ## 🚀 Live Demo
 
 [Live Website](https://f-vs-portflio-zpwp.vercel.app/?utm_source=chatgpt.com)
