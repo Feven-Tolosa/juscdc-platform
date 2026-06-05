@@ -60,7 +60,7 @@ export default function WhyJoinSection() {
       <div className='absolute bottom-0 right-0 h-96 w-96 rounded-full bg-yellow-400/10 blur-3xl' />
 
       {/* Grid Overlay */}
-      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]' />
+      <div className='absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[40px_40px]' />
 
       <div className='relative mx-auto max-w-7xl px-6 lg:px-12'>
         {/* Header */}
@@ -78,7 +78,7 @@ export default function WhyJoinSection() {
 
           <h2 className='text-4xl font-extrabold tracking-tight md:text-5xl'>
             Why Join{' '}
-            <span className='bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent'>
+            <span className='bg-linear-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent'>
               JUSCDC?
             </span>
           </h2>
@@ -108,10 +108,10 @@ export default function WhyJoinSection() {
                 className='group relative overflow-hidden rounded-[30px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/20 hover:bg-white/10 hover:shadow-2xl'
               >
                 {/* Hover Glow */}
-                <div className='absolute inset-0 bg-gradient-to-br from-yellow-400/0 via-yellow-400/0 to-yellow-400/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
+                <div className='absolute inset-0 bg-linear-to-br from-yellow-400/0 via-yellow-400/0 to-yellow-400/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100' />
 
                 {/* Icon */}
-                <div className='relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 text-slate-900 shadow-lg transition-transform duration-500 group-hover:scale-110'>
+                <div className='relative mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-yellow-400 to-yellow-500 text-slate-900 shadow-lg transition-transform duration-500 group-hover:scale-110'>
                   <Icon className='h-8 w-8' />
                 </div>
 
@@ -124,7 +124,7 @@ export default function WhyJoinSection() {
                 </p>
 
                 {/* Decorative Corner */}
-                <div className='absolute right-0 top-0 h-24 w-24 rounded-bl-[40px] bg-gradient-to-bl from-yellow-400/10 to-transparent' />
+                <div className='absolute right-0 top-0 h-24 w-24 rounded-bl-[40px] bg-linear-to-bl from-yellow-400/10 to-transparent' />
               </motion.div>
             )
           })}
@@ -136,7 +136,7 @@ export default function WhyJoinSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='relative mt-24 overflow-hidden rounded-[40px] border border-white/10 bg-gradient-to-r from-[#112662] via-[#2563eb] to-[#112662] p-10 text-center shadow-2xl'
+          className='relative mt-24 overflow-hidden rounded-[40px] border border-white/10 bg-linear-to-r from-[#112662] via-[#2563eb] to-[#112662] p-10 text-center shadow-2xl'
         >
           {/* Glow */}
           <div className='absolute left-0 top-0 h-72 w-72 rounded-full bg-yellow-400/20 blur-3xl' />

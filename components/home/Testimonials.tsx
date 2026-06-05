@@ -143,19 +143,19 @@ export default function TestimonialsSection() {
 
           {/* Stats */}
           <div className='mt-12 grid gap-6 md:grid-cols-3'>
-            <div className='rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl'>
+            <div className='rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/20 hover:bg-white/10 hover:shadow-2xl'>
               <h4 className='text-4xl font-extrabold text-yellow-400'>500+</h4>
 
               <p className='mt-3 text-slate-300'>Active Members</p>
             </div>
 
-            <div className='rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl'>
+            <div className='rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/20 hover:bg-white/10 hover:shadow-2xl'>
               <h4 className='text-4xl font-extrabold text-yellow-400'>20+</h4>
 
               <p className='mt-3 text-slate-300'>Programs Conducted</p>
             </div>
 
-            <div className='rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl'>
+            <div className='rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 hover:border-yellow-400/20 hover:bg-white/10 hover:shadow-2xl'>
               <h4 className='text-4xl font-extrabold text-yellow-400'>95%</h4>
 
               <p className='mt-3 text-slate-300'>Positive Feedback</p>
