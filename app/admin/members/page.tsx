@@ -1,5 +1,5 @@
-import MembersTable from '@/components/admin/MembersTable'
 import { createClient } from '@/lib/supabase/server'
+import MembersTable from '@/components/admin/MembersTable'
 
 export default async function AdminMembersPage() {
   const supabase = await createClient()

@@ -1,5 +1,5 @@
-import ProgramsManager from '@/components/admin/ProgramsManager'
 import { createClient } from '@/lib/supabase/server'
+import ProgramsManager from '@/components/admin/ProgramsManager'
 
 export default async function AdminProgramsPage() {
   const supabase = await createClient()
