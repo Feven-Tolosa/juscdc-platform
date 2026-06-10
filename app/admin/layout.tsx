@@ -22,7 +22,7 @@ export default async function AdminLayout({
     .eq('id', user.id)
     .maybeSingle()
 
-  if (!adminRow) redirect('/admin/login')
+  // if (!adminRow) redirect('/admin/login')
 
   return (
     <div className='flex min-h-screen bg-[#0d1424]'>

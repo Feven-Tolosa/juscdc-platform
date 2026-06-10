@@ -2,13 +2,13 @@
 
 import { useActionState, useState } from 'react'
 import { Eye, EyeOff, ShieldCheck } from 'lucide-react'
-import { adminLogin } from '@/actions/admin-auth'
+// import { adminLogin } from '@/actions/admin-auth'
 
 const inputClass =
   'w-full rounded-2xl border border-slate-700 bg-slate-800 px-5 py-4 text-slate-100 placeholder-slate-500 outline-none transition focus:border-yellow-400 focus:ring-1 focus:ring-yellow-400'
 
 export default function AdminLoginPage() {
-  const [state, formAction] = useActionState(adminLogin, { error: null })
+  // const [state, formAction] = useActionState(adminLogin, { error: null })
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -25,7 +25,8 @@ export default function AdminLoginPage() {
 
         {/* Card */}
         <div className='rounded-[32px] bg-slate-900 p-8 shadow-2xl ring-1 ring-slate-800'>
-          <form action={formAction} className='space-y-5'>
+          {/* <form action={formAction} className='space-y-5'> */}
+          <form className='space-y-5'>
             <input
               name='email'
               type='email'
@@ -52,11 +53,11 @@ export default function AdminLoginPage() {
               </button>
             </div>
 
-            {state.error && (
+            {/* {state.error && (
               <div className='rounded-2xl border border-red-800 bg-red-950 px-4 py-3 text-sm font-medium text-red-400'>
                 {state.error}
               </div>
-            )}
+            )} */}
 
             <button
               type='submit'

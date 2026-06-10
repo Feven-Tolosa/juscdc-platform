@@ -69,21 +69,21 @@ export async function middleware(request: NextRequest) {
   }
 
   // Admin protection
-  if (isAdminRoute) {
-    if (!user) {
-      return NextResponse.redirect(new URL('/login', request.url))
-    }
+  // if (isAdminRoute) {
+  //   if (!user) {
+  //     return NextResponse.redirect(new URL('/login', request.url))
+  //   }
 
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('role')
-      .eq('id', user.id)
-      .single()
+  //   const { data: profile } = await supabase
+  //     .from('profiles')
+  //     .select('role')
+  //     .eq('id', user.id)
+  //     .single()
 
-    if (profile?.role !== 'admin') {
-      return NextResponse.redirect(new URL('/', request.url))
-    }
-  }
+  //   if (profile?.role !== 'admin') {
+  //     return NextResponse.redirect(new URL('/', request.url))
+  //   }
+  // }
 
   return response
 }
