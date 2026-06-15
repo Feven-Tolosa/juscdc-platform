@@ -25,7 +25,7 @@ export default async function AdminLayout({
   // if (!adminRow) redirect('/admin/login')
 
   return (
-    <div className='flex min-h-screen bg-[#0d1424]'>
+    <div className='flex min-h-screen bg-[#0d1424] mt-25'>
       <AdminSidebar />
       <div className='flex flex-1 flex-col'>
         {/* Top bar */}
