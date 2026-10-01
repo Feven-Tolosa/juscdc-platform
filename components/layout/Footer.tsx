@@ -201,8 +201,13 @@ export default function Footer() {
             <Link href='/terms' className='transition hover:text-yellow-300'>
               Terms & Conditions
             </Link>
-<Link href='https://github.com/Feven-Tolosa ' className='transition hover:text-yellow-300'>
-              Feven Tolosa
+            <Link href='https://github.com/Feven-Tolosa '>
+              <span className='font-medium hover:text-white'>
+                Developed by:
+              </span>{' '}
+              <span className='transition hover:text-yellow-300'>
+                Feven Tolosa
+              </span>
             </Link>
           </div>
         </div>
