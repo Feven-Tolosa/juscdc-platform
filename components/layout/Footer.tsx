@@ -198,9 +198,11 @@ export default function Footer() {
             <Link href='/privacy' className='transition hover:text-yellow-300'>
               Privacy Policy
             </Link>
-
             <Link href='/terms' className='transition hover:text-yellow-300'>
               Terms & Conditions
+            </Link>
+<Link href='https://github.com/Feven-Tolosa ' className='transition hover:text-yellow-300'>
+              Feven Tolosa
             </Link>
           </div>
         </div>
